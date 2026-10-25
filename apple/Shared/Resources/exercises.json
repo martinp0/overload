@@ -1,0 +1,2272 @@
+{
+ "muscles": {
+  "chest": "Chest",
+  "shoulders": "Shoulders",
+  "triceps": "Triceps",
+  "biceps": "Biceps",
+  "forearms": "Forearms",
+  "lats": "Lats",
+  "upper_back": "Upper back",
+  "traps": "Traps",
+  "lower_back": "Lower back",
+  "abs": "Abs",
+  "obliques": "Obliques",
+  "quads": "Quads",
+  "hamstrings": "Hamstrings",
+  "glutes": "Glutes",
+  "calves": "Calves",
+  "adductors": "Adductors",
+  "abductors": "Abductors"
+ },
+ "exercises": [
+  {
+   "id": "bb_bench",
+   "name": "Barbell Bench Press",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "triceps",
+    "shoulders"
+   ],
+   "equipment": [
+    "barbell",
+    "bench"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "bb_incline_bench",
+   "name": "Incline Barbell Bench Press",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "shoulders",
+    "triceps"
+   ],
+   "equipment": [
+    "barbell",
+    "bench"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "bb_decline_bench",
+   "name": "Decline Barbell Bench Press",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "triceps"
+   ],
+   "equipment": [
+    "barbell",
+    "bench"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "db_bench",
+   "name": "Dumbbell Bench Press",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "triceps",
+    "shoulders"
+   ],
+   "equipment": [
+    "dumbbell",
+    "bench"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "db_incline_press",
+   "name": "Incline Dumbbell Press",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "shoulders",
+    "triceps"
+   ],
+   "equipment": [
+    "dumbbell",
+    "bench"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "db_fly",
+   "name": "Dumbbell Fly",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "shoulders"
+   ],
+   "equipment": [
+    "dumbbell",
+    "bench"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "db_incline_fly",
+   "name": "Incline Dumbbell Fly",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "shoulders"
+   ],
+   "equipment": [
+    "dumbbell",
+    "bench"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "cable_crossover",
+   "name": "Cable Crossover",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "shoulders"
+   ],
+   "equipment": [
+    "cable"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "cable_fly_low",
+   "name": "Low-to-High Cable Fly",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "shoulders"
+   ],
+   "equipment": [
+    "cable"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "machine_chest_press",
+   "name": "Machine Chest Press",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "triceps",
+    "shoulders"
+   ],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "pec_deck",
+   "name": "Pec Deck Fly",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "shoulders"
+   ],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "smith_bench",
+   "name": "Smith Machine Bench Press",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "triceps",
+    "shoulders"
+   ],
+   "equipment": [
+    "smith",
+    "bench"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "smith_incline",
+   "name": "Smith Machine Incline Press",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "shoulders",
+    "triceps"
+   ],
+   "equipment": [
+    "smith",
+    "bench"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "push_up",
+   "name": "Push-Up",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "triceps",
+    "shoulders",
+    "abs"
+   ],
+   "equipment": [],
+   "kind": "c",
+   "track": "bw",
+   "tier": 2
+  },
+  {
+   "id": "decline_push_up",
+   "name": "Decline Push-Up",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "shoulders",
+    "triceps"
+   ],
+   "equipment": [],
+   "kind": "c",
+   "track": "bw",
+   "tier": 1
+  },
+  {
+   "id": "dip_chest",
+   "name": "Chest Dip",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "triceps",
+    "shoulders"
+   ],
+   "equipment": [
+    "dip"
+   ],
+   "kind": "c",
+   "track": "bw",
+   "tier": 2
+  },
+  {
+   "id": "db_pullover",
+   "name": "Dumbbell Pullover",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "lats",
+    "triceps"
+   ],
+   "equipment": [
+    "dumbbell",
+    "bench"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "kb_floor_press",
+   "name": "Kettlebell Floor Press",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "triceps"
+   ],
+   "equipment": [
+    "kettlebell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "band_chest_press",
+   "name": "Band Chest Press",
+   "primary": [
+    "chest"
+   ],
+   "secondary": [
+    "triceps",
+    "shoulders"
+   ],
+   "equipment": [
+    "band"
+   ],
+   "kind": "c",
+   "track": "r",
+   "tier": 1
+  },
+  {
+   "id": "bb_ohp",
+   "name": "Overhead Press",
+   "primary": [
+    "shoulders"
+   ],
+   "secondary": [
+    "triceps",
+    "traps"
+   ],
+   "equipment": [
+    "barbell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "db_shoulder_press",
+   "name": "Dumbbell Shoulder Press",
+   "primary": [
+    "shoulders"
+   ],
+   "secondary": [
+    "triceps"
+   ],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "arnold_press",
+   "name": "Arnold Press",
+   "primary": [
+    "shoulders"
+   ],
+   "secondary": [
+    "triceps"
+   ],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "machine_shoulder_press",
+   "name": "Machine Shoulder Press",
+   "primary": [
+    "shoulders"
+   ],
+   "secondary": [
+    "triceps"
+   ],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "smith_ohp",
+   "name": "Smith Machine Shoulder Press",
+   "primary": [
+    "shoulders"
+   ],
+   "secondary": [
+    "triceps"
+   ],
+   "equipment": [
+    "smith"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "kb_press",
+   "name": "Kettlebell Overhead Press",
+   "primary": [
+    "shoulders"
+   ],
+   "secondary": [
+    "triceps"
+   ],
+   "equipment": [
+    "kettlebell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "pike_push_up",
+   "name": "Pike Push-Up",
+   "primary": [
+    "shoulders"
+   ],
+   "secondary": [
+    "triceps"
+   ],
+   "equipment": [],
+   "kind": "c",
+   "track": "bw",
+   "tier": 2
+  },
+  {
+   "id": "band_ohp",
+   "name": "Band Overhead Press",
+   "primary": [
+    "shoulders"
+   ],
+   "secondary": [
+    "triceps"
+   ],
+   "equipment": [
+    "band"
+   ],
+   "kind": "c",
+   "track": "r",
+   "tier": 1
+  },
+  {
+   "id": "db_lateral_raise",
+   "name": "Dumbbell Lateral Raise",
+   "primary": [
+    "shoulders"
+   ],
+   "secondary": [],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "cable_lateral_raise",
+   "name": "Cable Lateral Raise",
+   "primary": [
+    "shoulders"
+   ],
+   "secondary": [],
+   "equipment": [
+    "cable"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "machine_lateral_raise",
+   "name": "Machine Lateral Raise",
+   "primary": [
+    "shoulders"
+   ],
+   "secondary": [],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "band_lateral_raise",
+   "name": "Band Lateral Raise",
+   "primary": [
+    "shoulders"
+   ],
+   "secondary": [],
+   "equipment": [
+    "band"
+   ],
+   "kind": "i",
+   "track": "r",
+   "tier": 1
+  },
+  {
+   "id": "db_front_raise",
+   "name": "Dumbbell Front Raise",
+   "primary": [
+    "shoulders"
+   ],
+   "secondary": [
+    "chest"
+   ],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "db_rear_delt_fly",
+   "name": "Bent-Over Rear Delt Fly",
+   "primary": [
+    "shoulders"
+   ],
+   "secondary": [
+    "upper_back"
+   ],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "reverse_pec_deck",
+   "name": "Reverse Pec Deck",
+   "primary": [
+    "shoulders"
+   ],
+   "secondary": [
+    "upper_back"
+   ],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "face_pull",
+   "name": "Face Pull",
+   "primary": [
+    "shoulders"
+   ],
+   "secondary": [
+    "upper_back",
+    "traps"
+   ],
+   "equipment": [
+    "cable"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "band_pull_apart",
+   "name": "Band Pull-Apart",
+   "primary": [
+    "shoulders"
+   ],
+   "secondary": [
+    "upper_back"
+   ],
+   "equipment": [
+    "band"
+   ],
+   "kind": "i",
+   "track": "r",
+   "tier": 1
+  },
+  {
+   "id": "bb_upright_row",
+   "name": "Barbell Upright Row",
+   "primary": [
+    "shoulders"
+   ],
+   "secondary": [
+    "traps",
+    "biceps"
+   ],
+   "equipment": [
+    "barbell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "close_grip_bench",
+   "name": "Close-Grip Bench Press",
+   "primary": [
+    "triceps"
+   ],
+   "secondary": [
+    "chest",
+    "shoulders"
+   ],
+   "equipment": [
+    "barbell",
+    "bench"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "tricep_pushdown",
+   "name": "Tricep Pushdown",
+   "primary": [
+    "triceps"
+   ],
+   "secondary": [],
+   "equipment": [
+    "cable"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "rope_pushdown",
+   "name": "Rope Pushdown",
+   "primary": [
+    "triceps"
+   ],
+   "secondary": [],
+   "equipment": [
+    "cable"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "overhead_cable_ext",
+   "name": "Overhead Cable Extension",
+   "primary": [
+    "triceps"
+   ],
+   "secondary": [],
+   "equipment": [
+    "cable"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "db_overhead_ext",
+   "name": "Dumbbell Overhead Extension",
+   "primary": [
+    "triceps"
+   ],
+   "secondary": [],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "skull_crusher",
+   "name": "EZ-Bar Skull Crusher",
+   "primary": [
+    "triceps"
+   ],
+   "secondary": [],
+   "equipment": [
+    "ezbar",
+    "bench"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "db_kickback",
+   "name": "Dumbbell Kickback",
+   "primary": [
+    "triceps"
+   ],
+   "secondary": [],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "machine_tricep_ext",
+   "name": "Machine Tricep Extension",
+   "primary": [
+    "triceps"
+   ],
+   "secondary": [],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "dip_triceps",
+   "name": "Tricep Dip",
+   "primary": [
+    "triceps"
+   ],
+   "secondary": [
+    "chest",
+    "shoulders"
+   ],
+   "equipment": [
+    "dip"
+   ],
+   "kind": "c",
+   "track": "bw",
+   "tier": 3
+  },
+  {
+   "id": "bench_dip",
+   "name": "Bench Dip",
+   "primary": [
+    "triceps"
+   ],
+   "secondary": [
+    "shoulders"
+   ],
+   "equipment": [
+    "bench"
+   ],
+   "kind": "i",
+   "track": "bw",
+   "tier": 1
+  },
+  {
+   "id": "diamond_push_up",
+   "name": "Diamond Push-Up",
+   "primary": [
+    "triceps"
+   ],
+   "secondary": [
+    "chest"
+   ],
+   "equipment": [],
+   "kind": "c",
+   "track": "bw",
+   "tier": 2
+  },
+  {
+   "id": "band_pushdown",
+   "name": "Band Pushdown",
+   "primary": [
+    "triceps"
+   ],
+   "secondary": [],
+   "equipment": [
+    "band"
+   ],
+   "kind": "i",
+   "track": "r",
+   "tier": 1
+  },
+  {
+   "id": "bb_curl",
+   "name": "Barbell Curl",
+   "primary": [
+    "biceps"
+   ],
+   "secondary": [
+    "forearms"
+   ],
+   "equipment": [
+    "barbell"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "ez_curl",
+   "name": "EZ-Bar Curl",
+   "primary": [
+    "biceps"
+   ],
+   "secondary": [
+    "forearms"
+   ],
+   "equipment": [
+    "ezbar"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "db_curl",
+   "name": "Dumbbell Curl",
+   "primary": [
+    "biceps"
+   ],
+   "secondary": [
+    "forearms"
+   ],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "hammer_curl",
+   "name": "Hammer Curl",
+   "primary": [
+    "biceps"
+   ],
+   "secondary": [
+    "forearms"
+   ],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "incline_db_curl",
+   "name": "Incline Dumbbell Curl",
+   "primary": [
+    "biceps"
+   ],
+   "secondary": [],
+   "equipment": [
+    "dumbbell",
+    "bench"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "preacher_curl",
+   "name": "EZ-Bar Preacher Curl",
+   "primary": [
+    "biceps"
+   ],
+   "secondary": [],
+   "equipment": [
+    "ezbar",
+    "bench"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "concentration_curl",
+   "name": "Concentration Curl",
+   "primary": [
+    "biceps"
+   ],
+   "secondary": [],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "cable_curl",
+   "name": "Cable Curl",
+   "primary": [
+    "biceps"
+   ],
+   "secondary": [
+    "forearms"
+   ],
+   "equipment": [
+    "cable"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "machine_curl",
+   "name": "Machine Curl",
+   "primary": [
+    "biceps"
+   ],
+   "secondary": [],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "kb_curl",
+   "name": "Kettlebell Curl",
+   "primary": [
+    "biceps"
+   ],
+   "secondary": [
+    "forearms"
+   ],
+   "equipment": [
+    "kettlebell"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "band_curl",
+   "name": "Band Curl",
+   "primary": [
+    "biceps"
+   ],
+   "secondary": [],
+   "equipment": [
+    "band"
+   ],
+   "kind": "i",
+   "track": "r",
+   "tier": 1
+  },
+  {
+   "id": "wrist_curl",
+   "name": "Dumbbell Wrist Curl",
+   "primary": [
+    "forearms"
+   ],
+   "secondary": [],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "reverse_curl",
+   "name": "Reverse Barbell Curl",
+   "primary": [
+    "forearms"
+   ],
+   "secondary": [
+    "biceps"
+   ],
+   "equipment": [
+    "barbell"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "farmers_carry",
+   "name": "Farmer's Carry",
+   "primary": [
+    "forearms"
+   ],
+   "secondary": [
+    "traps",
+    "abs"
+   ],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "c",
+   "track": "wt",
+   "tier": 2
+  },
+  {
+   "id": "dead_hang",
+   "name": "Dead Hang",
+   "primary": [
+    "forearms"
+   ],
+   "secondary": [
+    "lats"
+   ],
+   "equipment": [
+    "pullup"
+   ],
+   "kind": "i",
+   "track": "t",
+   "tier": 2
+  },
+  {
+   "id": "pull_up",
+   "name": "Pull-Up",
+   "primary": [
+    "lats"
+   ],
+   "secondary": [
+    "biceps",
+    "upper_back"
+   ],
+   "equipment": [
+    "pullup"
+   ],
+   "kind": "c",
+   "track": "bw",
+   "tier": 3
+  },
+  {
+   "id": "chin_up",
+   "name": "Chin-Up",
+   "primary": [
+    "lats"
+   ],
+   "secondary": [
+    "biceps"
+   ],
+   "equipment": [
+    "pullup"
+   ],
+   "kind": "c",
+   "track": "bw",
+   "tier": 3
+  },
+  {
+   "id": "lat_pulldown",
+   "name": "Lat Pulldown",
+   "primary": [
+    "lats"
+   ],
+   "secondary": [
+    "biceps",
+    "upper_back"
+   ],
+   "equipment": [
+    "cable"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "close_grip_pulldown",
+   "name": "Close-Grip Pulldown",
+   "primary": [
+    "lats"
+   ],
+   "secondary": [
+    "biceps"
+   ],
+   "equipment": [
+    "cable"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "straight_arm_pulldown",
+   "name": "Straight-Arm Pulldown",
+   "primary": [
+    "lats"
+   ],
+   "secondary": [],
+   "equipment": [
+    "cable"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "db_row",
+   "name": "One-Arm Dumbbell Row",
+   "primary": [
+    "lats"
+   ],
+   "secondary": [
+    "upper_back",
+    "biceps"
+   ],
+   "equipment": [
+    "dumbbell",
+    "bench"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "kb_row",
+   "name": "Kettlebell Row",
+   "primary": [
+    "lats"
+   ],
+   "secondary": [
+    "upper_back",
+    "biceps"
+   ],
+   "equipment": [
+    "kettlebell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "band_pulldown",
+   "name": "Band Lat Pulldown",
+   "primary": [
+    "lats"
+   ],
+   "secondary": [
+    "biceps"
+   ],
+   "equipment": [
+    "band"
+   ],
+   "kind": "c",
+   "track": "r",
+   "tier": 1
+  },
+  {
+   "id": "bb_row",
+   "name": "Barbell Row",
+   "primary": [
+    "upper_back"
+   ],
+   "secondary": [
+    "lats",
+    "biceps",
+    "lower_back"
+   ],
+   "equipment": [
+    "barbell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "pendlay_row",
+   "name": "Pendlay Row",
+   "primary": [
+    "upper_back"
+   ],
+   "secondary": [
+    "lats",
+    "lower_back"
+   ],
+   "equipment": [
+    "barbell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "t_bar_row",
+   "name": "T-Bar Row",
+   "primary": [
+    "upper_back"
+   ],
+   "secondary": [
+    "lats",
+    "biceps"
+   ],
+   "equipment": [
+    "barbell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "seated_cable_row",
+   "name": "Seated Cable Row",
+   "primary": [
+    "upper_back"
+   ],
+   "secondary": [
+    "lats",
+    "biceps"
+   ],
+   "equipment": [
+    "cable"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "chest_supported_row",
+   "name": "Chest-Supported Dumbbell Row",
+   "primary": [
+    "upper_back"
+   ],
+   "secondary": [
+    "lats",
+    "biceps"
+   ],
+   "equipment": [
+    "dumbbell",
+    "bench"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "machine_row",
+   "name": "Machine Row",
+   "primary": [
+    "upper_back"
+   ],
+   "secondary": [
+    "lats",
+    "biceps"
+   ],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "inverted_row",
+   "name": "Inverted Row",
+   "primary": [
+    "upper_back"
+   ],
+   "secondary": [
+    "lats",
+    "biceps"
+   ],
+   "equipment": [
+    "barbell"
+   ],
+   "kind": "c",
+   "track": "bw",
+   "tier": 1
+  },
+  {
+   "id": "band_row",
+   "name": "Band Row",
+   "primary": [
+    "upper_back"
+   ],
+   "secondary": [
+    "lats",
+    "biceps"
+   ],
+   "equipment": [
+    "band"
+   ],
+   "kind": "c",
+   "track": "r",
+   "tier": 1
+  },
+  {
+   "id": "ytw_raise",
+   "name": "Prone Y-T-W Raise",
+   "primary": [
+    "upper_back"
+   ],
+   "secondary": [
+    "shoulders",
+    "traps"
+   ],
+   "equipment": [],
+   "kind": "i",
+   "track": "r",
+   "tier": 1
+  },
+  {
+   "id": "bb_shrug",
+   "name": "Barbell Shrug",
+   "primary": [
+    "traps"
+   ],
+   "secondary": [
+    "forearms"
+   ],
+   "equipment": [
+    "barbell"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "db_shrug",
+   "name": "Dumbbell Shrug",
+   "primary": [
+    "traps"
+   ],
+   "secondary": [
+    "forearms"
+   ],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "deadlift",
+   "name": "Deadlift",
+   "primary": [
+    "hamstrings",
+    "glutes",
+    "lower_back"
+   ],
+   "secondary": [
+    "quads",
+    "traps",
+    "forearms",
+    "upper_back"
+   ],
+   "equipment": [
+    "barbell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "back_extension",
+   "name": "Back Extension",
+   "primary": [
+    "lower_back"
+   ],
+   "secondary": [
+    "glutes",
+    "hamstrings"
+   ],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "i",
+   "track": "bw",
+   "tier": 2
+  },
+  {
+   "id": "good_morning",
+   "name": "Good Morning",
+   "primary": [
+    "hamstrings",
+    "lower_back"
+   ],
+   "secondary": [
+    "glutes"
+   ],
+   "equipment": [
+    "barbell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "superman",
+   "name": "Superman Hold",
+   "primary": [
+    "lower_back"
+   ],
+   "secondary": [
+    "glutes"
+   ],
+   "equipment": [],
+   "kind": "i",
+   "track": "t",
+   "tier": 1
+  },
+  {
+   "id": "bird_dog",
+   "name": "Bird Dog",
+   "primary": [
+    "lower_back"
+   ],
+   "secondary": [
+    "abs",
+    "glutes"
+   ],
+   "equipment": [],
+   "kind": "i",
+   "track": "r",
+   "tier": 1
+  },
+  {
+   "id": "bb_squat",
+   "name": "Barbell Back Squat",
+   "primary": [
+    "quads",
+    "glutes"
+   ],
+   "secondary": [
+    "hamstrings",
+    "adductors",
+    "lower_back"
+   ],
+   "equipment": [
+    "barbell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "front_squat",
+   "name": "Front Squat",
+   "primary": [
+    "quads"
+   ],
+   "secondary": [
+    "glutes",
+    "abs",
+    "upper_back"
+   ],
+   "equipment": [
+    "barbell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "goblet_squat",
+   "name": "Goblet Squat",
+   "primary": [
+    "quads"
+   ],
+   "secondary": [
+    "glutes"
+   ],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "kb_goblet_squat",
+   "name": "Kettlebell Goblet Squat",
+   "primary": [
+    "quads"
+   ],
+   "secondary": [
+    "glutes"
+   ],
+   "equipment": [
+    "kettlebell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "leg_press",
+   "name": "Leg Press",
+   "primary": [
+    "quads"
+   ],
+   "secondary": [
+    "glutes",
+    "hamstrings"
+   ],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "hack_squat",
+   "name": "Hack Squat",
+   "primary": [
+    "quads"
+   ],
+   "secondary": [
+    "glutes"
+   ],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "smith_squat",
+   "name": "Smith Machine Squat",
+   "primary": [
+    "quads"
+   ],
+   "secondary": [
+    "glutes",
+    "hamstrings"
+   ],
+   "equipment": [
+    "smith"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "bulgarian_split_squat",
+   "name": "Bulgarian Split Squat",
+   "primary": [
+    "quads",
+    "glutes"
+   ],
+   "secondary": [
+    "hamstrings",
+    "adductors"
+   ],
+   "equipment": [
+    "dumbbell",
+    "bench"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "db_lunge",
+   "name": "Dumbbell Lunge",
+   "primary": [
+    "quads"
+   ],
+   "secondary": [
+    "glutes",
+    "hamstrings"
+   ],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "walking_lunge",
+   "name": "Walking Lunge",
+   "primary": [
+    "quads"
+   ],
+   "secondary": [
+    "glutes",
+    "hamstrings"
+   ],
+   "equipment": [],
+   "kind": "c",
+   "track": "bw",
+   "tier": 1
+  },
+  {
+   "id": "step_up",
+   "name": "Dumbbell Step-Up",
+   "primary": [
+    "quads"
+   ],
+   "secondary": [
+    "glutes"
+   ],
+   "equipment": [
+    "dumbbell",
+    "bench"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "leg_extension",
+   "name": "Leg Extension",
+   "primary": [
+    "quads"
+   ],
+   "secondary": [],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "bw_squat",
+   "name": "Bodyweight Squat",
+   "primary": [
+    "quads"
+   ],
+   "secondary": [
+    "glutes"
+   ],
+   "equipment": [],
+   "kind": "c",
+   "track": "bw",
+   "tier": 1
+  },
+  {
+   "id": "jump_squat",
+   "name": "Jump Squat",
+   "primary": [
+    "quads"
+   ],
+   "secondary": [
+    "glutes",
+    "calves"
+   ],
+   "equipment": [],
+   "kind": "c",
+   "track": "bw",
+   "tier": 1
+  },
+  {
+   "id": "wall_sit",
+   "name": "Wall Sit",
+   "primary": [
+    "quads"
+   ],
+   "secondary": [
+    "glutes"
+   ],
+   "equipment": [],
+   "kind": "i",
+   "track": "t",
+   "tier": 1
+  },
+  {
+   "id": "rdl",
+   "name": "Romanian Deadlift",
+   "primary": [
+    "hamstrings"
+   ],
+   "secondary": [
+    "glutes",
+    "lower_back"
+   ],
+   "equipment": [
+    "barbell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "db_rdl",
+   "name": "Dumbbell Romanian Deadlift",
+   "primary": [
+    "hamstrings"
+   ],
+   "secondary": [
+    "glutes",
+    "lower_back"
+   ],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "single_leg_rdl",
+   "name": "Single-Leg Romanian Deadlift",
+   "primary": [
+    "hamstrings"
+   ],
+   "secondary": [
+    "glutes"
+   ],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "lying_leg_curl",
+   "name": "Lying Leg Curl",
+   "primary": [
+    "hamstrings"
+   ],
+   "secondary": [],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "seated_leg_curl",
+   "name": "Seated Leg Curl",
+   "primary": [
+    "hamstrings"
+   ],
+   "secondary": [],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "nordic_curl",
+   "name": "Nordic Hamstring Curl",
+   "primary": [
+    "hamstrings"
+   ],
+   "secondary": [],
+   "equipment": [],
+   "kind": "i",
+   "track": "bw",
+   "tier": 1
+  },
+  {
+   "id": "kb_swing",
+   "name": "Kettlebell Swing",
+   "primary": [
+    "glutes",
+    "hamstrings"
+   ],
+   "secondary": [
+    "lower_back"
+   ],
+   "equipment": [
+    "kettlebell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "hip_thrust",
+   "name": "Barbell Hip Thrust",
+   "primary": [
+    "glutes"
+   ],
+   "secondary": [
+    "hamstrings"
+   ],
+   "equipment": [
+    "barbell",
+    "bench"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "glute_bridge",
+   "name": "Glute Bridge",
+   "primary": [
+    "glutes"
+   ],
+   "secondary": [
+    "hamstrings"
+   ],
+   "equipment": [],
+   "kind": "i",
+   "track": "bw",
+   "tier": 2
+  },
+  {
+   "id": "single_leg_glute_bridge",
+   "name": "Single-Leg Glute Bridge",
+   "primary": [
+    "glutes"
+   ],
+   "secondary": [
+    "hamstrings"
+   ],
+   "equipment": [],
+   "kind": "i",
+   "track": "bw",
+   "tier": 1
+  },
+  {
+   "id": "cable_kickback",
+   "name": "Cable Glute Kickback",
+   "primary": [
+    "glutes"
+   ],
+   "secondary": [],
+   "equipment": [
+    "cable"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "sumo_deadlift",
+   "name": "Sumo Deadlift",
+   "primary": [
+    "glutes",
+    "quads"
+   ],
+   "secondary": [
+    "adductors",
+    "hamstrings",
+    "lower_back"
+   ],
+   "equipment": [
+    "barbell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "trap_bar_deadlift",
+   "name": "Trap Bar Deadlift",
+   "primary": [
+    "quads",
+    "glutes"
+   ],
+   "secondary": [
+    "hamstrings",
+    "lower_back",
+    "traps"
+   ],
+   "equipment": [
+    "trapbar"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "hip_abduction",
+   "name": "Hip Abduction Machine",
+   "primary": [
+    "abductors"
+   ],
+   "secondary": [
+    "glutes"
+   ],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "hip_adduction",
+   "name": "Hip Adduction Machine",
+   "primary": [
+    "adductors"
+   ],
+   "secondary": [],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "band_lateral_walk",
+   "name": "Banded Lateral Walk",
+   "primary": [
+    "abductors"
+   ],
+   "secondary": [
+    "glutes"
+   ],
+   "equipment": [
+    "band"
+   ],
+   "kind": "i",
+   "track": "r",
+   "tier": 1
+  },
+  {
+   "id": "side_lying_leg_raise",
+   "name": "Side-Lying Leg Raise",
+   "primary": [
+    "abductors"
+   ],
+   "secondary": [
+    "glutes"
+   ],
+   "equipment": [],
+   "kind": "i",
+   "track": "r",
+   "tier": 1
+  },
+  {
+   "id": "sumo_goblet_squat",
+   "name": "Sumo Goblet Squat",
+   "primary": [
+    "adductors",
+    "quads"
+   ],
+   "secondary": [
+    "glutes"
+   ],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "c",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "copenhagen_plank",
+   "name": "Copenhagen Plank",
+   "primary": [
+    "adductors"
+   ],
+   "secondary": [
+    "obliques"
+   ],
+   "equipment": [
+    "bench"
+   ],
+   "kind": "i",
+   "track": "t",
+   "tier": 1
+  },
+  {
+   "id": "standing_calf_raise",
+   "name": "Standing Calf Raise",
+   "primary": [
+    "calves"
+   ],
+   "secondary": [],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "seated_calf_raise",
+   "name": "Seated Calf Raise",
+   "primary": [
+    "calves"
+   ],
+   "secondary": [],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "db_calf_raise",
+   "name": "Dumbbell Calf Raise",
+   "primary": [
+    "calves"
+   ],
+   "secondary": [],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "smith_calf_raise",
+   "name": "Smith Machine Calf Raise",
+   "primary": [
+    "calves"
+   ],
+   "secondary": [],
+   "equipment": [
+    "smith"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "leg_press_calf_raise",
+   "name": "Leg Press Calf Raise",
+   "primary": [
+    "calves"
+   ],
+   "secondary": [],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "bw_calf_raise",
+   "name": "Single-Leg Calf Raise",
+   "primary": [
+    "calves"
+   ],
+   "secondary": [],
+   "equipment": [],
+   "kind": "i",
+   "track": "bw",
+   "tier": 1
+  },
+  {
+   "id": "plank",
+   "name": "Plank",
+   "primary": [
+    "abs"
+   ],
+   "secondary": [
+    "obliques",
+    "lower_back"
+   ],
+   "equipment": [],
+   "kind": "i",
+   "track": "t",
+   "tier": 3
+  },
+  {
+   "id": "side_plank",
+   "name": "Side Plank",
+   "primary": [
+    "obliques"
+   ],
+   "secondary": [
+    "abs"
+   ],
+   "equipment": [],
+   "kind": "i",
+   "track": "t",
+   "tier": 2
+  },
+  {
+   "id": "crunch",
+   "name": "Crunch",
+   "primary": [
+    "abs"
+   ],
+   "secondary": [],
+   "equipment": [],
+   "kind": "i",
+   "track": "bw",
+   "tier": 2
+  },
+  {
+   "id": "hanging_leg_raise",
+   "name": "Hanging Leg Raise",
+   "primary": [
+    "abs"
+   ],
+   "secondary": [
+    "obliques"
+   ],
+   "equipment": [
+    "pullup"
+   ],
+   "kind": "i",
+   "track": "bw",
+   "tier": 3
+  },
+  {
+   "id": "lying_leg_raise",
+   "name": "Lying Leg Raise",
+   "primary": [
+    "abs"
+   ],
+   "secondary": [],
+   "equipment": [],
+   "kind": "i",
+   "track": "bw",
+   "tier": 2
+  },
+  {
+   "id": "cable_crunch",
+   "name": "Cable Crunch",
+   "primary": [
+    "abs"
+   ],
+   "secondary": [],
+   "equipment": [
+    "cable"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 3
+  },
+  {
+   "id": "machine_crunch",
+   "name": "Ab Crunch Machine",
+   "primary": [
+    "abs"
+   ],
+   "secondary": [],
+   "equipment": [
+    "machine"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 1
+  },
+  {
+   "id": "ab_wheel",
+   "name": "Ab Wheel Rollout",
+   "primary": [
+    "abs"
+   ],
+   "secondary": [
+    "lower_back",
+    "shoulders"
+   ],
+   "equipment": [],
+   "kind": "i",
+   "track": "r",
+   "tier": 2
+  },
+  {
+   "id": "dead_bug",
+   "name": "Dead Bug",
+   "primary": [
+    "abs"
+   ],
+   "secondary": [],
+   "equipment": [],
+   "kind": "i",
+   "track": "r",
+   "tier": 1
+  },
+  {
+   "id": "mountain_climber",
+   "name": "Mountain Climber",
+   "primary": [
+    "abs"
+   ],
+   "secondary": [
+    "shoulders",
+    "quads"
+   ],
+   "equipment": [],
+   "kind": "i",
+   "track": "r",
+   "tier": 1
+  },
+  {
+   "id": "russian_twist",
+   "name": "Russian Twist",
+   "primary": [
+    "obliques"
+   ],
+   "secondary": [
+    "abs"
+   ],
+   "equipment": [],
+   "kind": "i",
+   "track": "bw",
+   "tier": 2
+  },
+  {
+   "id": "bicycle_crunch",
+   "name": "Bicycle Crunch",
+   "primary": [
+    "obliques"
+   ],
+   "secondary": [
+    "abs"
+   ],
+   "equipment": [],
+   "kind": "i",
+   "track": "r",
+   "tier": 2
+  },
+  {
+   "id": "pallof_press",
+   "name": "Pallof Press",
+   "primary": [
+    "obliques"
+   ],
+   "secondary": [
+    "abs"
+   ],
+   "equipment": [
+    "cable"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "cable_woodchop",
+   "name": "Cable Woodchop",
+   "primary": [
+    "obliques"
+   ],
+   "secondary": [
+    "abs"
+   ],
+   "equipment": [
+    "cable"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 2
+  },
+  {
+   "id": "db_side_bend",
+   "name": "Dumbbell Side Bend",
+   "primary": [
+    "obliques"
+   ],
+   "secondary": [],
+   "equipment": [
+    "dumbbell"
+   ],
+   "kind": "i",
+   "track": "wr",
+   "tier": 1
+  }
+ ]
+}
