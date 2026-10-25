@@ -1,0 +1,6 @@
+*.xcodeproj
+watchOS/Info.plist
+build/
+DerivedData/
+xcuserdata/
+*.xcuserstate

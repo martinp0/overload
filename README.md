@@ -55,6 +55,7 @@ Edit the files and push. The service worker serves the cached copy first and fet
 | `js/views/*.js` | The four tabs: workout (planner + logger), history, exercises, settings |
 | `js/timer.js` | Rest timer, alert beep and screen wake lock |
 | `css/app.css` | All styles, with light and dark themes |
+| `apple/` | Native iPhone + Apple Watch app (SwiftUI, XcodeGen). See `apple/README.md` |
 
 To add a built-in exercise, add a line to the `RAW` table in `js/data.js`:
 
