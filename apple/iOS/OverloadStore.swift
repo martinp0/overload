@@ -113,7 +113,7 @@ final class OverloadStore: ObservableObject {
     }
 
     func saveTemplate(name: String, from workout: Workout) {
-        let tpl = WorkoutTemplate(id: ID.make(), name: name, createdAt: .now, items: Engine.templateItems(from: workout))
+        let tpl = WorkoutTemplate(id: IDGen.make(), name: name, createdAt: .now, items: Engine.templateItems(from: workout))
         data.templates = [tpl] + templates
         persist()
     }

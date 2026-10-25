@@ -119,7 +119,7 @@ struct ActiveSet: Codable, Hashable {
 }
 
 struct ActiveEntry: Codable, Hashable, Identifiable {
-    var uid = ID.make()
+    var uid = IDGen.make()
     var exId: String
     var name: String
     var min: Int
@@ -144,7 +144,7 @@ struct ActiveEntry: Codable, Hashable, Identifiable {
 }
 
 struct ActiveWorkout: Codable, Hashable {
-    var id = ID.make()
+    var id = IDGen.make()
     var name: String
     var startedAt: EpochMS = .now
     var entries: [ActiveEntry]

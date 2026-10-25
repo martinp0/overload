@@ -138,7 +138,7 @@ enum WeightUnit: String, Codable, Sendable {
     var step: Double { self == .lb ? 5 : 2.5 }
 }
 
-enum ID {
+enum IDGen {
     /// Same format as `uid()` in js/store.js: base36 time + 6 random base36 chars.
     static func make() -> String {
         let t = String(EpochMS.now, radix: 36)
