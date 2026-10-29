@@ -1,0 +1,70 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "Last workout in ${applicationName}": {
+      "localizations": {
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Poslední trénink v ${applicationName}"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Posledný tréning v ${applicationName}"
+          }
+        }
+      }
+    },
+    "How was my last ${applicationName} workout": {
+      "localizations": {
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jaký byl poslední trénink v ${applicationName}"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aký bol posledný tréning v ${applicationName}"
+          }
+        }
+      }
+    },
+    "My week in ${applicationName}": {
+      "localizations": {
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Můj týden v ${applicationName}"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Môj týždeň v ${applicationName}"
+          }
+        }
+      }
+    },
+    "${applicationName} weekly summary": {
+      "localizations": {
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Týdenní souhrn ${applicationName}"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Týždenný súhrn ${applicationName}"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
