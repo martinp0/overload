@@ -64,3 +64,7 @@ id|Name|primary muscles|secondary muscles|equipment|c or i|track|tier
 ```
 
 `track` is what you log: `wr` (weight × reps), `bw` (bodyweight reps, optional added weight), `r` (reps only), `t` (seconds) or `wt` (weight × seconds). `tier` is 1–3, and higher tiers get picked more often by the generator.
+
+## Shortcuts, Spotlight and the Action button (App Intents)
+
+`apple/iOS/OverloadIntents.swift`: **Last Workout** and **This Week's Training**, read from the local backup JSON (nothing leaves the phone). They are App Shortcuts, so they show up in Shortcuts and Spotlight right after install; Siri phrases in English, Czech/Slovak titles in `apple/iOS/AppShortcuts.xcstrings`. `apple/Shared/PrivacyInfo.xcprivacy` is the privacy manifest for the iPhone and Watch apps (no tracking, no collected data, no required-reason APIs).
