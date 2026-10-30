@@ -2,9 +2,12 @@ import SwiftUI
 
 struct HistoryView: View {
     @EnvironmentObject private var store: OverloadStore
+    @EnvironmentObject private var pro: ProStore
+    @State private var paywall = false
 
     var body: some View {
-        NavigationStack {
+        let shown = ProGate.visibleHistory(store.history, date: { $0.startedAt.date }, isPro: pro.isPro)
+        return NavigationStack {
             Group {
                 if store.history.isEmpty {
                     ContentUnavailableView(
@@ -14,16 +17,22 @@ struct HistoryView: View {
                     )
                 } else {
                     List {
-                        ForEach(store.history) { w in
+                        ForEach(shown.visible) { w in
                             NavigationLink(value: w.id) { WorkoutRow(workout: w) }
                         }
                         .onDelete { idx in
-                            for i in idx { store.deleteWorkout(id: store.history[i].id) }
+                            for i in idx { store.deleteWorkout(id: shown.visible[i].id) }
+                        }
+                        if shown.locked > 0 {
+                            Button { paywall = true } label: {
+                                Label("\(shown.locked) older workouts – unlock with Overload Pro", systemImage: "lock")
+                            }
                         }
                     }
                 }
             }
             .navigationTitle("History")
+            .sheet(isPresented: $paywall) { ProPaywallView() }
             .navigationDestination(for: String.self) { id in
                 if let w = store.history.first(where: { $0.id == id }) { WorkoutDetailView(workout: w) }
             }
@@ -54,9 +63,11 @@ struct WorkoutRow: View {
 
 struct WorkoutDetailView: View {
     @EnvironmentObject private var store: OverloadStore
+    @EnvironmentObject private var pro: ProStore
     let workout: Workout
     @State private var templateName = ""
     @State private var askName = false
+    @State private var paywall = false
 
     var body: some View {
         List {
@@ -87,8 +98,15 @@ struct WorkoutDetailView: View {
         }
         .navigationTitle(workout.name)
         .toolbar {
-            Button { templateName = workout.name; askName = true } label: { Label("Save as workout", systemImage: "bookmark") }
+            Button {
+                if ProGate.canSaveTemplate(existing: store.templates.count, isPro: pro.isPro) {
+                    templateName = workout.name; askName = true
+                } else {
+                    paywall = true
+                }
+            } label: { Label("Save as workout", systemImage: "bookmark") }
         }
+        .sheet(isPresented: $paywall) { ProPaywallView() }
         .alert("Save workout", isPresented: $askName) {
             TextField("Name", text: $templateName)
             Button("Save") { store.saveTemplate(name: templateName.isEmpty ? workout.name : templateName, from: workout) }

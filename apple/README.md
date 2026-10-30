@@ -29,6 +29,14 @@ workout session, and keep the same history as the browser through the web app's 
   *Settings → Export backup*. Import can either add only new workouts (matched by id) or replace
   everything, like the web app does. Export can be imported back in the browser.
 
+## Overload Pro (in-app purchase)
+
+StoreKit 2, iPhone only (`iOS/Store/`). Products: `cz.martinpohl.overload.pro.monthly`,
+`cz.martinpohl.overload.pro.yearly` (auto-renewable, one group) and
+`cz.martinpohl.overload.pro.lifetime` (non-consumable). Prices come from the App Store.
+Free tier (`Shared/ProGate.swift`): 3 saved workouts and the last 3 months of history in the list.
+Older workouts are kept and always exported. Restore purchases and the paywall are on the Data tab.
+
 ## Data compatibility
 
 There's no backend. The web app keeps everything in `localStorage`, so the native apps use the

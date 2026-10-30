@@ -4,14 +4,17 @@ import SwiftUI
 struct OverloadApp: App {
     @StateObject private var store = OverloadStore()
     @StateObject private var sync = PhoneSync()
+    @StateObject private var pro = ProStore()
 
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environmentObject(store)
                 .environmentObject(sync)
+                .environmentObject(pro)
                 .tint(.overloadAccent)
                 .onAppear { sync.start(store: store) }
+                .task { await pro.load() }
         }
     }
 }

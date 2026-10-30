@@ -4,6 +4,8 @@ import UniformTypeIdentifiers
 /// Import/export in the web app's backup format (Settings → Export backup / Import backup).
 struct DataView: View {
     @EnvironmentObject private var store: OverloadStore
+    @EnvironmentObject private var pro: ProStore
+    @State private var paywall = false
     @State private var importing = false
     @State private var exporting = false
     @State private var pending: OverloadBackup?
@@ -18,6 +20,12 @@ struct DataView: View {
                 } footer: {
                     Text("Uses the same JSON file as Settings → Export backup in the Overload web app, so you can move your history between the browser, this iPhone and your Apple Watch.")
                 }
+                Section("Overload Pro") {
+                    Button { paywall = true } label: {
+                        Label(pro.isPro ? "Overload Pro is active" : "Get Overload Pro", systemImage: pro.isPro ? "checkmark.seal.fill" : "star")
+                    }
+                    Button("Restore purchases") { Task { await pro.restore(); message = pro.notice; pro.notice = nil } }
+                }
                 Section("On this iPhone") {
                     LabeledContent("Workouts", value: "\(store.history.count)")
                     LabeledContent("Saved workouts", value: "\(store.templates.count)")
@@ -25,6 +33,7 @@ struct DataView: View {
                 }
             }
             .navigationTitle("Data")
+            .sheet(isPresented: $paywall) { ProPaywallView() }
             .fileImporter(isPresented: $importing, allowedContentTypes: [.json]) { result in
                 do {
                     let url = try result.get()
