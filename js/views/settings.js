@@ -56,6 +56,12 @@ export function renderSettings(el) {
         <button class="btn ghost-danger" data-act="erase">${icon('trash')} Erase all data</button>
       </div>
       <p class="muted small">${state.history.length} workouts, ${state.templates.length} saved workouts, ${state.custom.length} custom exercises.</p>
+    </section>
+
+    <section class="set-group">
+      <h2 class="section-title">Privacy</h2>
+      <p class="muted">Workouts stay on this device. Overload has no account and does not send them anywhere.</p>
+      <a class="btn" href="privacy.html">${icon('external')} Privacy policy</a>
     </section>`);
 
   el.onclick = async (e) => {

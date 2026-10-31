@@ -94,6 +94,7 @@ export function renderDock() {
   const el = dock();
   el.innerHTML = out;
   document.documentElement.style.setProperty('--dock-h', `${el.offsetHeight}px`);
+  if (typeof window.__overloadCover === 'function') window.__overloadCover();
   tick();
   syncWakeLock();
 }
@@ -115,12 +116,13 @@ export function tick() {
     stopRest();
     return;
   }
-  const time = document.querySelector('[data-rest-time]');
-  const bar = document.querySelector('[data-rest-bar]');
-  if (!time) return;
-  time.textContent = left > 0 ? clock(left * 1000) : 'Go';
-  document.querySelector('[data-rest]').classList.toggle('over', left <= 0);
-  bar.style.width = `${Math.max(0, Math.min(100, (left / r.total) * 100))}%`;
+  const nodes = document.querySelectorAll('[data-rest-time]');
+  if (!nodes.length) return;
+  const label = left > 0 ? clock(left * 1000) : 'Go';
+  for (const time of nodes) time.textContent = label;
+  for (const rest of document.querySelectorAll('[data-rest]')) rest.classList.toggle('over', left <= 0);
+  const pct = `${Math.max(0, Math.min(100, (left / r.total) * 100))}%`;
+  for (const bar of document.querySelectorAll('[data-rest-bar]')) bar.style.width = pct;
 }
 
 async function syncWakeLock() {
@@ -140,7 +142,7 @@ async function syncWakeLock() {
 }
 
 export function initTimer() {
-  dock().addEventListener('click', (e) => {
+  document.addEventListener('click', (e) => {
     const b = e.target.closest('[data-rest-act]');
     if (!b) return;
     const act = b.dataset.restAct;

@@ -10,7 +10,9 @@ A workout generator and lifting log that runs entirely in the browser. It's stat
 - **Saves workouts.** Save any generated workout, or any past one, as a template and start it again with one tap.
 - **Keeps history and progress.** Every workout is kept with its sets, volume and new records. You can edit or delete past workouts. Each exercise has a chart of estimated 1-rep max, heaviest set or volume, plus its full session list.
 - **Has ~140 built-in exercises** for barbells, dumbbells, kettlebells, cables, machines, bands and bodyweight. You can add your own.
-- **Works offline and installs to your home screen.** Use "Add to Home Screen" on your phone.
+- **Works offline and installs to your home screen.** Use "Add to Home Screen" on your phone. The same site is packaged for Samsung Galaxy phones (including Z Flip and Z Fold) and for a Samsung TV follow-along. See `RELEASE-SAMSUNG.md`.
+
+Fold layouts can be previewed in a desktop browser with `?fold=flex`, `?fold=book`, or `?fold=cover` (for example `http://localhost:8000/?fold=flex`). On a real Flip or Fold the page follows the device posture.
 
 ## Put it on GitHub Pages
 
@@ -56,6 +58,9 @@ Edit the files and push. The service worker serves the cached copy first and fet
 | `js/timer.js` | Rest timer, alert beep and screen wake lock |
 | `css/app.css` | All styles, with light and dark themes |
 | `apple/` | Native iPhone + Apple Watch app (SwiftUI, XcodeGen). See `apple/README.md` |
+| `android/` | Samsung Galaxy / Android shell (Capacitor). See `RELEASE-SAMSUNG.md` |
+| `tizen/` | Samsung TV follow-along. `npm run tizen`, then `aerotizen install tizen/dist` |
+| `css/fold.css`, `js/fold.js` | Galaxy Z Flip / Z Fold layouts (window size classes, Flex Mode, cover glance) |
 
 To add a built-in exercise, add a line to the `RAW` table in `js/data.js`:
 

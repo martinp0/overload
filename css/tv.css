@@ -1,0 +1,185 @@
+/* 10-foot follow-along. Written for Tizen 6.5 (Chromium ~M85): no :has, no inset,
+   no dvh, no :focus-visible. The ring is .is-on, which the remote keys move. */
+
+html, body, #tv {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: #121418;
+  color: #f4f1ea;
+  font: 400 28px/1.35 'SamsungOne', 'Samsung Sans', Roboto, system-ui, sans-serif;
+}
+
+#tv { display: flex; flex-direction: column; }
+
+body { overflow: hidden; }
+
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; text-align: left; }
+
+.tv-app {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  padding: 42px 56px 28px;
+}
+
+.tv-top {
+  display: flex;
+  align-items: baseline;
+  gap: 28px;
+  margin-bottom: 22px;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  font-size: 22px;
+  color: #f2c230;
+}
+
+.tv-tag { margin: 0; color: #b7b1a6; font-size: 28px; }
+.tv-session { margin: 0; flex: 1; font-size: 36px; font-weight: 750; }
+.tv-elapsed { margin: 0 0 0 auto; font-size: 36px; font-variant-numeric: tabular-nums; color: #d9d3c7; }
+
+.tv-home {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  max-width: 1280px;
+}
+
+.tv-row, .tv-resume, .tv-choice {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  padding: 22px 28px;
+  border-radius: 18px;
+  background: #23272e;
+  border: 4px solid transparent;
+}
+
+.tv-resume { background: #2563d8; color: #fff; font-size: 32px; font-weight: 750; }
+.tv-row-label, .tv-choice { font-size: 36px; font-weight: 750; }
+.tv-row-detail { font-size: 24px; color: #b7b1a6; }
+
+.is-on {
+  border-color: #f2c230;
+  background: #3a3320;
+}
+.tv-resume.is-on { background: #1d4fb5; }
+
+.tv-main {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 460px minmax(0, 1fr) 520px;
+  gap: 36px;
+  align-items: center;
+}
+
+.resting .tv-main { grid-template-columns: 380px minmax(0, 1fr) 620px; }
+
+.tv-ex {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.tv-ex li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 10px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: #1c2026;
+  border: 4px solid transparent;
+}
+
+.tv-ex li.is-on { border-color: #f2c230; background: #2c281c; }
+.tv-ex li.done .tv-ex-name { color: #8f8a82; }
+.tv-ex-name { flex: 1; font-size: 28px; font-weight: 700; }
+.tv-ex-meta { font-size: 24px; color: #b7b1a6; font-variant-numeric: tabular-nums; }
+
+.tv-stage { padding-top: 12px; }
+.eyebrow {
+  margin: 0 0 8px;
+  color: #f2c230;
+  font-size: 22px;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.lift {
+  margin: 0 0 12px;
+  font-size: 92px;
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.dose {
+  margin: 0;
+  font-size: 72px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+.dose.guessed { color: #b7b1a6; }
+.pips { display: flex; gap: 10px; margin: 22px 0; }
+.pip {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #3a4048;
+}
+.pip.is-on { outline: 4px solid #f2c230; }
+.pip.done { background: #2f9e5a; }
+.tv-sub, .tv-warn { margin: 8px 0 0; font-size: 26px; color: #d9d3c7; }
+.tv-warn { color: #f2c230; }
+
+.tv-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 460px;
+  padding: 36px 36px;
+  border-radius: 28px;
+  background: #1c2026;
+}
+.rest-num {
+  margin: 0;
+  font-size: 168px;
+  line-height: 0.85;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: #8eb6ff;
+}
+.rest-next { margin: 0; font-size: 88px; font-weight: 800; color: #d9d3c7; }
+.bar { height: 14px; margin-top: 22px; border-radius: 999px; background: #3a4048; overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: #3270de; }
+
+.tv-confirm { max-width: 920px; margin-top: 48px; }
+.tv-confirm h2 { margin: 0 0 24px; font-size: 64px; }
+.tv-choice { margin-bottom: 14px; }
+
+.tv-hints {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin-top: 18px;
+  color: #b7b1a6;
+  font-size: 22px;
+}
+.key.y { color: #f2c230; }
+.key.b { color: #8eb6ff; }
+.key.r { color: #ff8d90; }
+.key.g { color: #7ddea4; }
+
+:focus { outline: none; }

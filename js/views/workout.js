@@ -31,6 +31,8 @@ export function renderWorkout(el) {
   const next = w.exercises.find((e) => !isComplete(e));
 
   el.innerHTML = String(h`
+    <div class="fold-split">
+    <div class="fold-look">
     ${header(w)}
     <div class="wk-progress" role="progressbar" aria-valuemin="0" aria-valuemax="${all.length}" aria-valuenow="${done}" aria-label="Sets done">
       <div class="wk-bar"><i style="width:${all.length ? (done / all.length) * 100 : 0}%"></i></div>
@@ -55,12 +57,16 @@ export function renderWorkout(el) {
       </li>`;
     })}</ul>` : h`<p class="empty-note">Add an exercise to start logging.</p>`}
     <button class="add-row" data-act="add">${icon('plus')} Add exercise</button>
+    </div>
 
+    <div class="fold-controls">
     <div class="cta-bar">
       ${next ? h`<a class="btn primary big" href="#/workout/${next.uid}">${icon('play')} ${doneCount(next) || w.exercises.indexOf(next) ? 'Continue' : 'Begin'}: ${getEx(next.exId, next.name).name}</a>`
         : h`<button class="btn primary big" data-act="finish">${icon('check')} Finish workout</button>`}
     </div>
-    <button class="btn wide ghost-danger" data-act="discard">End without saving</button>`);
+    <button class="btn wide ghost-danger" data-act="discard">End without saving</button>
+    </div>
+    </div>`);
 
   el.onclick = async (e) => {
     const b = e.target.closest('[data-act]');
@@ -162,6 +168,8 @@ export function renderLogExercise(el, uid) {
   let n = 0;
 
   el.innerHTML = String(h`
+    <div class="fold-split">
+    <div class="fold-look">
     ${header(w, true)}
     <header class="ex-hero">
       ${thumb(ex, 'large')}
@@ -184,7 +192,9 @@ export function renderLogExercise(el, uid) {
       ${sug?.kind === 'up' ? h`<button class="up-chip" data-act="apply">${icon('up')} Try ${fmtW(sug.w)} ${unit()}</button>
         <span class="hint">You hit the top of the range on every set.</span>` : ''}
     </div>` : h`<p class="hint first-time">First time doing this one. Pick a weight you can lift for ${e.max} clean reps.</p>`}
+    </div>
 
+    <div class="fold-controls">
     <div class="sets log" role="table" aria-label="${ex.name} sets">
       <div class="set-row head f${fields.length}" role="row">
         <span role="columnheader">Set</span><span role="columnheader">Previous</span>
@@ -220,7 +230,9 @@ export function renderLogExercise(el, uid) {
       ${nextEntry ? h`<a class="btn big ${isComplete(e) ? 'primary' : ''} next-btn" href="#/workout/${nextEntry.uid}" data-next>
           <span class="next-k">Next</span><span class="next-v">${getEx(nextEntry.exId, nextEntry.name).name}</span>${icon('next')}</a>`
         : h`<a class="btn big ${isComplete(e) ? 'primary' : ''} next-btn" href="#/" data-next><span class="next-v">Back to overview</span>${icon('next')}</a>`}
-    </nav>`);
+    </nav>
+    </div>
+    </div>`);
 
   el.onclick = (ev) => onLogClick(ev, e);
   el.oninput = (ev) => onInput(ev, e);
