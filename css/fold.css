@@ -1,0 +1,313 @@
+/* Foldable window classes, Flex Mode, book posture, and the Flip cover glance.
+   Compact phones keep the styles in app.css. These rules only apply once
+   js/fold.js sets data-window / data-posture / data-cover. */
+
+#fold-stage[hidden],
+#cover-glance[hidden] { display: none !important; }
+
+/* ---- Medium and expanded: Fold inner display, DeX, tablets, wide windows ---- */
+
+html[data-window="medium"]:not([data-posture="flex"]):not([data-posture="book"]) #view {
+  max-width: 880px;
+}
+
+html[data-window="medium"]:not([data-posture="flex"]):not([data-posture="book"]) .ex-list,
+html[data-window="medium"]:not([data-posture="flex"]):not([data-posture="book"]) .hist-list,
+html[data-window="medium"]:not([data-posture="flex"]):not([data-posture="book"]) .tpl-list {
+  grid-template-columns: 1fr 1fr;
+}
+
+html[data-window="expanded"]:not([data-posture="flex"]):not([data-posture="book"]),
+html[data-window="large"]:not([data-posture="flex"]):not([data-posture="book"]),
+html[data-window="xlarge"]:not([data-posture="flex"]):not([data-posture="book"]) {
+  --tabs-h: 0px;
+  --rail: 108px;
+}
+
+html[data-window="expanded"]:not([data-posture="flex"]):not([data-posture="book"]) #tabs,
+html[data-window="large"]:not([data-posture="flex"]):not([data-posture="book"]) #tabs,
+html[data-window="xlarge"]:not([data-posture="flex"]):not([data-posture="book"]) #tabs {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2px;
+  width: var(--rail);
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: auto;
+  padding: calc(12px + env(safe-area-inset-top, 0px)) 0 env(safe-area-inset-bottom, 0px);
+  border-top: 0;
+  border-right: 1px solid var(--line);
+}
+
+html[data-window="expanded"]:not([data-posture="flex"]):not([data-posture="book"]) #tabs a,
+html[data-window="large"]:not([data-posture="flex"]):not([data-posture="book"]) #tabs a,
+html[data-window="xlarge"]:not([data-posture="flex"]):not([data-posture="book"]) #tabs a {
+  flex: none;
+  max-width: none;
+  width: 100%;
+  min-height: 72px;
+  font-size: 13px;
+}
+
+html[data-window="expanded"]:not([data-posture="flex"]):not([data-posture="book"]) #view,
+html[data-window="large"]:not([data-posture="flex"]):not([data-posture="book"]) #view,
+html[data-window="xlarge"]:not([data-posture="flex"]):not([data-posture="book"]) #view {
+  max-width: none;
+  margin: 0;
+  padding-left: calc(var(--rail) + 28px);
+  padding-right: 32px;
+}
+
+html[data-window="expanded"]:not([data-posture="flex"]):not([data-posture="book"]) #dock,
+html[data-window="large"]:not([data-posture="flex"]):not([data-posture="book"]) #dock,
+html[data-window="xlarge"]:not([data-posture="flex"]):not([data-posture="book"]) #dock {
+  left: var(--rail);
+  right: 0;
+  max-width: none;
+  padding: 0 24px;
+}
+
+html[data-window="expanded"]:not([data-posture="flex"]):not([data-posture="book"]) .ex-list,
+html[data-window="large"]:not([data-posture="flex"]):not([data-posture="book"]) .ex-list,
+html[data-window="expanded"]:not([data-posture="flex"]):not([data-posture="book"]) .hist-list,
+html[data-window="large"]:not([data-posture="flex"]):not([data-posture="book"]) .hist-list,
+html[data-window="expanded"]:not([data-posture="flex"]):not([data-posture="book"]) .tpl-list,
+html[data-window="large"]:not([data-posture="flex"]):not([data-posture="book"]) .tpl-list {
+  grid-template-columns: 1fr 1fr;
+}
+
+html[data-window="xlarge"]:not([data-posture="flex"]):not([data-posture="book"]) .ex-list,
+html[data-window="xlarge"]:not([data-posture="flex"]):not([data-posture="book"]) .hist-list {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+html[data-window="expanded"]:not([data-posture="flex"]):not([data-posture="book"]) .fold-split,
+html[data-window="large"]:not([data-posture="flex"]):not([data-posture="book"]) .fold-split,
+html[data-window="xlarge"]:not([data-posture="flex"]):not([data-posture="book"]) .fold-split {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(340px, 1.15fr);
+  gap: 8px 36px;
+  align-items: start;
+}
+
+/* ---- Flex Mode: horizontal hinge, exercise and timer above, controls below ---- */
+
+html[data-posture="flex"],
+html[data-posture="flex"] body,
+html[data-posture="book"],
+html[data-posture="book"] body {
+  height: 100%;
+  overflow: hidden;
+}
+
+html[data-posture="flex"] {
+  --fold-top: 50vh;
+  --fold-hinge: 0px;
+}
+
+html[data-posture="flex"] #view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: var(--fold-top);
+  max-width: none;
+  margin: 0;
+  overflow: auto;
+  padding-bottom: calc(var(--dock-h) + 18px);
+}
+
+html[data-posture="flex"] #fold-stage {
+  position: fixed;
+  z-index: 4;
+  left: 0;
+  right: 0;
+  top: calc(var(--fold-top) + var(--fold-hinge));
+  bottom: calc(var(--tabs-h) + env(safe-area-inset-bottom, 0px));
+  overflow: auto;
+  padding: 12px var(--gutter) 10px;
+  background: var(--bg);
+}
+
+html[data-posture="flex"] #dock {
+  top: calc(var(--fold-top) - var(--dock-h) - 8px);
+  bottom: auto;
+  left: 8px;
+  right: 8px;
+  max-width: none;
+  margin: 0;
+}
+
+html[data-posture="flex"] .rest-time { font-size: 56px; }
+html[data-posture="flex"] .rest { margin-bottom: 0; }
+
+html[data-posture="flex"] #fold-stage .cta-bar {
+  position: static;
+  margin: 8px 0 0;
+  padding: 8px 0 0;
+  background: none;
+}
+
+html[data-posture="flex"] #fold-stage .btn.primary.big { min-height: 64px; }
+
+html[data-posture="flex"] body::after {
+  content: "";
+  position: fixed;
+  z-index: 35;
+  left: 0;
+  right: 0;
+  top: var(--fold-top);
+  height: var(--fold-hinge);
+  background: var(--ink);
+  pointer-events: none;
+}
+
+/* ---- Book posture: vertical hinge, context on the left, logging on the right ---- */
+
+html[data-posture="book"] {
+  --fold-left: 50vw;
+  --fold-hinge: 0px;
+  --fold-right: 50vw;
+}
+
+html[data-posture="book"] #view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--fold-left);
+  height: 100%;
+  max-width: none;
+  margin: 0;
+  overflow: auto;
+  padding-bottom: calc(var(--tabs-h) + env(safe-area-inset-bottom, 0px) + 28px);
+}
+
+html[data-posture="book"] #fold-stage {
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: calc(var(--fold-left) + var(--fold-hinge));
+  width: var(--fold-right);
+  bottom: 0;
+  overflow: auto;
+  padding: 16px 16px calc(var(--dock-h) + 24px);
+  background: var(--surface);
+}
+
+html[data-posture="book"] #tabs {
+  width: var(--fold-left);
+  left: 0;
+  right: auto;
+}
+
+html[data-posture="book"] #dock {
+  left: calc(var(--fold-left) + var(--fold-hinge) + 8px);
+  width: calc(var(--fold-right) - 16px);
+  right: auto;
+  max-width: none;
+  bottom: 12px;
+}
+
+html[data-posture="book"] #fold-stage .cta-bar {
+  position: static;
+  margin: 8px 0 0;
+  padding: 8px 0 0;
+  background: none;
+}
+
+html[data-posture="book"] body::after {
+  content: "";
+  position: fixed;
+  z-index: 35;
+  top: 0;
+  bottom: 0;
+  left: var(--fold-left);
+  width: var(--fold-hinge);
+  background: var(--ink);
+  pointer-events: none;
+}
+
+/* ---- Flip cover glance ---- */
+
+html[data-cover="1"] #view,
+html[data-cover="1"] #tabs,
+html[data-cover="1"] #dock,
+html[data-cover="1"] #fold-stage,
+html[data-cover="1"] #sheet-root,
+html[data-cover="1"] #toast-root {
+  display: none !important;
+}
+
+#cover-glance {
+  position: fixed;
+  z-index: 80;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 14px 16px 12px;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.cover-kicker {
+  margin: 0;
+  color: var(--ink-3);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cover-title {
+  margin: 0;
+  font: 800 clamp(28px, 9vw, 44px)/0.95 var(--font-num);
+  overflow-wrap: anywhere;
+}
+
+.cover-sub { margin: 0; color: var(--ink-2); font-size: 14px; }
+
+.cover-clock { margin-top: 8px; }
+.cover-label {
+  margin: 0 0 2px;
+  color: var(--ink-2);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.cover-time {
+  margin: 0;
+  font: 800 clamp(64px, 22vw, 104px)/0.85 var(--font-num);
+  font-variant-numeric: tabular-nums;
+}
+.cover-clock.rest .cover-time { color: var(--blue); }
+.cover-clock.over .cover-time { color: var(--green); }
+.cover-bar { height: 6px; margin: 8px 0; border-radius: 999px; background: var(--surface-3); overflow: hidden; }
+.cover-bar i { display: block; height: 100%; background: var(--blue); }
+.cover-clock.over .cover-bar i { background: var(--green); }
+.cover-actions { display: flex; gap: 8px; margin-top: 8px; }
+.cover-actions .btn { flex: 1; min-height: 48px; }
+.cover-note { margin: 10px 0 0; color: var(--ink-2); font-size: 14px; }
+
+/* Android edge-to-edge: the WebView draws behind the status bar and reports the
+   inset. Browser tabs leave the variable at 0, so this does not move the site. */
+html[data-native="android"] body {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Pop-up / multi-window keeps the compact UI, with slightly tighter page padding. */
+html[data-multiwindow="1"][data-window="compact"] #view {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+html[data-multiwindow="1"][data-window="compact"] {
+  --gutter: 12px;
+}

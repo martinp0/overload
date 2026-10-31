@@ -17,9 +17,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Big+Shoulders:opsz,wght@10..72,700..800&display=swap">
   <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/fold.css">
+  <script>
+    // Paint the right window class before CSS loads the fold sheet's rules.
+    // Thresholds match windowSizeClass() in js/fold-metrics.js.
+    (function () {
+      var w = document.documentElement.clientWidth || window.innerWidth;
+      var c = w < 600 ? 'compact' : w < 840 ? 'medium' : w < 1200 ? 'expanded' : w < 1600 ? 'large' : 'xlarge';
+      document.documentElement.dataset.window = c;
+    })();
+  </script>
 </head>
 <body>
   <main id="view" tabindex="-1"></main>
+  <div id="fold-stage" hidden></div>
+  <div id="cover-glance" hidden></div>
   <div id="dock"></div>
   <nav id="tabs" aria-label="Main">
     <a href="#/" data-tab="workout">

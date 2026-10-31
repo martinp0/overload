@@ -1,0 +1,49 @@
+name: Android
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Install
+        run: npm ci
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Build the Tizen package
+        run: npm run tizen
+
+      - name: Sync the web app into the Android project
+        run: npm run android:sync
+
+      - name: Assemble debug APK and release AAB
+        working-directory: android
+        run: chmod +x ./gradlew && ./gradlew assembleDebug bundleRelease --stacktrace
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: overload-samsung
+          if-no-files-found: error
+          path: |
+            android/app/build/outputs/apk/debug/*.apk
+            android/app/build/outputs/bundle/release/*.aab
+            tizen/Overload.wgt

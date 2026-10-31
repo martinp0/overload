@@ -71,9 +71,11 @@ export function renderToday(el) {
       <button class="add-row" data-act="add">${icon('plus')} Add exercise</button>
     </section>
 
+    <div class="fold-controls">
     <div class="cta-bar">
       <button class="btn primary big" data-act="start" ${d.items.length ? '' : 'disabled'}>${icon('play')} Start workout</button>
       <button class="btn big icon-only" data-act="save" aria-label="Save as a workout template" title="Save as template">${icon('bookmark')}</button>
+    </div>
     </div>
 
     <section aria-labelledby="saved-title">

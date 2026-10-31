@@ -9,6 +9,7 @@ import { renderHistory, renderHistoryDetail } from './views/history.js';
 import { renderExercises, renderExerciseDetail, renderExerciseForm } from './views/exercises.js';
 import { renderSettings, applyTheme } from './views/settings.js';
 import { renderShared } from './views/shared.js';
+import { initFold, layoutFoldRegions, rememberRoute, clearFoldStage, renderCover } from './fold.js';
 
 const routes = [
   [/^\/$/, (el) => (state.active ? renderWorkout(el) : renderToday(el)), 'workout'],
@@ -27,6 +28,7 @@ const routes = [
 const main = document.getElementById('view');
 
 function render() {
+  clearFoldStage();
   const path = location.hash.replace(/^#/, '') || '/';
   let match = null;
   for (const [re, view, tab] of routes) {
@@ -39,6 +41,8 @@ function render() {
   }
   main.onclick = main.oninput = main.onchange = main.onkeydown = main.onfocusin = null;
   match.view(main, ...match.params);
+  layoutFoldRegions();
+  renderCover();
   for (const a of document.querySelectorAll('#tabs a')) {
     if (a.dataset.tab === match.tab) a.setAttribute('aria-current', 'page');
     else a.removeAttribute('aria-current');
@@ -60,9 +64,11 @@ hooks.onSaveError = () => toast('Storage is full. Export a backup in Settings an
 load();
 applyTheme();
 initTimer();
+initFold();
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
 window.addEventListener('hashchange', () => {
   document.getElementById('toast-root').innerHTML = '';
+  rememberRoute();
   render();
   window.scrollTo(0, 0);
 });
@@ -78,6 +84,7 @@ window.addEventListener('storage', (e) => {
   }
 });
 render();
+rememberRoute();
 initScrollRows();
 
 // Chip rows scroll sideways. Make that work with a mouse wheel and by dragging on desktop.
