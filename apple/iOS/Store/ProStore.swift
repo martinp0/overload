@@ -32,7 +32,7 @@ final class ProStore: ObservableObject {
         state = .loading
         do {
             let found = try await Product.products(for: ProGate.productIDs)
-            products = found.sorted { (ProGate.productIDs.firstIndex(of: $0.id) ?? 9) < (ProGate.productIDs.firstIndex(of: $1.id) ?? 9) }
+            products = found.sorted { (ProGate.displayOrder.firstIndex(of: $0.id) ?? 9) < (ProGate.displayOrder.firstIndex(of: $1.id) ?? 9) }
             state = products.isEmpty ? .failed : .loaded
         } catch {
             state = .failed
@@ -88,6 +88,13 @@ final class ProStore: ObservableObject {
         }
         await t.finish()
         await refreshEntitlements()
+    }
+
+    /// Savings of the yearly plan against twelve monthly payments, from App Store prices.
+    var yearlySavingsPercent: Int? {
+        guard let m = products.first(where: { $0.id == ProGate.monthlyID }),
+              let y = products.first(where: { $0.id == ProGate.yearlyID }) else { return nil }
+        return ProGate.yearlySavingsPercent(monthly: m.price, yearly: y.price)
     }
 
     /// "/ month", "/ year" for subscriptions, "one-time" for the lifetime unlock.

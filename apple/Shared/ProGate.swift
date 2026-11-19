@@ -6,6 +6,8 @@ enum ProGate {
     static let yearlyID = "cz.martinpohl.overload.pro.yearly"
     static let lifetimeID = "cz.martinpohl.overload.pro.lifetime"
     static let productIDs = [monthlyID, yearlyID, lifetimeID]
+    /// Order on the paywall: the yearly plan first (best value), then lifetime, then monthly.
+    static let displayOrder = [yearlyID, lifetimeID, monthlyID]
 
     /// Saved workouts (templates) without Pro.
     static let freeTemplates = 3
@@ -27,5 +29,15 @@ enum ProGate {
         let cutoff = historyCutoff(now: now, calendar: calendar)
         let visible = items.filter { date($0) >= cutoff }
         return (visible, items.count - visible.count)
+    }
+
+    /// Whole percent a year saves against twelve monthly payments, or nil when it saves nothing.
+    /// Example: 79 Kč/month and 499 Kč/year save 47 %.
+    static func yearlySavingsPercent(monthly: Decimal, yearly: Decimal) -> Int? {
+        let fullYear = monthly * 12
+        guard fullYear > 0, yearly > 0, yearly < fullYear else { return nil }
+        let saved = NSDecimalNumber(decimal: (fullYear - yearly) / fullYear * 100).doubleValue
+        let percent = Int(saved.rounded(.down))
+        return percent > 0 ? percent : nil
     }
 }
