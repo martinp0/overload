@@ -43,6 +43,11 @@ struct ProPaywallView: View {
                                     HStack {
                                         VStack(alignment: .leading) {
                                             Text(p.displayName).font(.headline)
+                                            if p.id == ProGate.yearlyID {
+                                                Text(yearlyNote(p))
+                                                    .font(.caption.bold())
+                                                    .foregroundStyle(.green)
+                                            }
                                             if let intro = p.subscription?.introductoryOffer, intro.paymentMode == .freeTrial {
                                                 Text("Free trial, then \(p.displayPrice)").font(.caption).foregroundStyle(.secondary)
                                             }
@@ -80,5 +85,14 @@ struct ProPaywallView: View {
                 Button("OK", role: .cancel) {}
             }
         }
+    }
+
+    /// "Best value · save 47 % · 41,58 Kč / month" for the yearly plan.
+    private func yearlyNote(_ p: Product) -> String {
+        var parts = ["Best value"]
+        if let saved = pro.yearlySavingsPercent { parts.append("save \(saved) %") }
+        let perMonth = (p.price / 12).formatted(p.priceFormatStyle)
+        parts.append("\(perMonth) / month")
+        return parts.joined(separator: " · ")
     }
 }
